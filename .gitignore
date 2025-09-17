@@ -54,7 +54,6 @@ coverage/
 .env.production.local
 
 # OS Generated
-.DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -76,7 +75,4 @@ docker-compose.override.yml
 *.log  # Docker logs
 
 # Testing & Coverage
-.coverage
-htmlcov/
-.nyc_output
-coverage/
+
