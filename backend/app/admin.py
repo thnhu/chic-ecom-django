@@ -10,7 +10,7 @@ class BaseAdmin(admin.ModelAdmin):
     class Meta:
         abstract = True
 
-# Admin for Product management
+# Admin for Product management (including inventory)
 @admin.register(Product)
 class ProductAdmin(BaseAdmin):
     list_display = ('id', 'name', 'price', 'stock', 'is_available', 'created_at')
@@ -60,11 +60,3 @@ class OrderItemAdmin(BaseAdmin):
     list_display = ('id', 'order', 'product', 'quantity', 'price', 'created_at')
     list_filter = ('created_at',)
     search_fields = ('product__name',)
-
-# Admin for Inventory management (using Product model)
-@admin.register(Product)
-class InventoryAdmin(ProductAdmin):
-    list_display = ('id', 'name', 'stock', 'is_available', 'created_at')
-    list_editable = ('stock', 'is_available')
-    list_filter = ('is_available', 'created_at')
-    search_fields = ('name',)

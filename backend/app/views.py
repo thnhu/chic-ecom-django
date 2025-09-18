@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
 from .models import Product, Customer, Cart, CartItem, Order, OrderItem
 from .serializers import ProductSerializer, CustomerSerializer, CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer
+from django.http import HttpResponse
 
 # Abstract base class for common API view behavior
 class BaseAPIView(generics.GenericAPIView):
@@ -13,6 +14,9 @@ class BaseAPIView(generics.GenericAPIView):
 
     class Meta:
         abstract = True
+
+def home(request):
+    return HttpResponse("Welcome to the E-commerce Platform!")
 
 # Customer Registration
 @api_view(['POST'])
