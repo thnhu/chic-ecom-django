@@ -7,6 +7,7 @@ from django.db.models import Q
 from .models import Product, Customer, Cart, CartItem, Order, OrderItem
 from .serializers import ProductSerializer, CustomerSerializer, CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer
 from django.http import HttpResponse
+from django.http import JsonResponse
 
 # Abstract base class for common API view behavior
 class BaseAPIView(generics.GenericAPIView):
