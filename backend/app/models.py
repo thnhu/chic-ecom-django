@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from django.contrib.auth.hashers import make_password
 
@@ -39,6 +41,7 @@ class Collection(BaseModel):
 
 # Customer model
 class Customer(BaseModel):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=15, blank=True)
