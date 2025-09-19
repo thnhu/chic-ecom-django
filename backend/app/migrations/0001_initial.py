@@ -47,9 +47,9 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('first_name', models.CharField(max_length=50)),
-                ('last_name', models.CharField(max_length=50)),
+                ('name', models.CharField(max_length=100)),  # Thay first/last_name
                 ('email', models.EmailField(max_length=254, unique=True)),
+                ('password_hash', models.CharField(max_length=128)),  # Thêm password
                 ('phone_number', models.CharField(blank=True, max_length=15)),
             ],
             options={

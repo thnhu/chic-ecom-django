@@ -1,3 +1,4 @@
+import uuid
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
@@ -5,8 +6,10 @@ from rest_framework.decorators import api_view, permission_classes
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
 from .models import Product, Customer, Cart, CartItem, Order, OrderItem
-from .serializers import ProductSerializer, CustomerSerializer, CartSerializer, CartItemSerializer, OrderSerializer, OrderItemSerializer
+from .serializers import ProductSerializer, CustomerSerializer, CartSerializer, CartItemSerializer, OrderSerializer, \
+    OrderItemSerializer, LoginSerializer
 from django.http import HttpResponse
+
 from django.http import JsonResponse
 
 # Abstract base class for common API view behavior
@@ -25,22 +28,41 @@ def home(request):
 def register_customer(request):
     serializer = CustomerSerializer(data=request.data)
     if serializer.is_valid():
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        customer = serializer.save()  # Tự động hash password qua create()
+        response_data = {
+            'id': customer.id,
+            'name': customer.name,
+            'email': customer.email,
+            'phone_number': customer.phone_number,
+            'created_at': customer.created_at
+        }
+        return Response(response_data, status=status.HTTP_201_CREATED)
+    # Debug: Print lỗi để console
+    print("Validation errors:", serializer.errors)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # Customer Login
 @api_view(['POST'])
 @permission_classes([permissions.AllowAny])
 def login_customer(request):
-    email = request.data.get('email')
-    password = request.data.get('password')
-    user = authenticate(request, username=email, password=password)
-    if user:
-        login(request, user)
-        token, _ = Token.objects.get_or_create(user=user)
-        return Response({'token': token.key}, status=status.HTTP_200_OK)
-    return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+    serializer = LoginSerializer(data=request.data)
+    if serializer.is_valid():
+        customer = serializer.validated_data['customer']
+        # Tạo token thủ công (UUID cho simplicity)
+        token = str(uuid.uuid4())  # Token duy nhất
+        # Trong production, lưu token vào DB hoặc Redis (Project 2)
+        response_data = {
+            'message': 'Đăng nhập thành công!',
+            'token': token,
+            'user': {
+                'id': customer.id,
+                'name': customer.name,
+                'email': customer.email
+            }
+        }
+        return Response(response_data, status=status.HTTP_200_OK)
+    print("Login errors:", serializer.errors)  # Debug
+    return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
 
 # Customer Logout
 @api_view(['POST'])

@@ -28,8 +28,8 @@ class CollectionAdmin(BaseAdmin):
 # Admin for Customer management
 @admin.register(Customer)
 class CustomerAdmin(BaseAdmin):
-    list_display = ('id', 'first_name', 'last_name', 'email', 'created_at')
-    search_fields = ('first_name', 'last_name', 'email')
+    list_display = ('id', 'name', 'email', 'phone_number', 'created_at')
+    search_fields = ('name', 'email', 'phone_number')
     list_filter = ('created_at',)
 
 # Admin for Cart management

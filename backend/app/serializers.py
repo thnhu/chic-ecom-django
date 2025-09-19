@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Product, Customer, Cart, CartItem, Order, OrderItem
-
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
@@ -10,8 +11,35 @@ class ProductSerializer(serializers.ModelSerializer):
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ['id', 'first_name', 'last_name', 'email', 'phone_number', 'created_at', 'updated_at']
-        read_only_fields = ['created_at', 'updated_at']
+        fields = ['id', 'name', 'email', 'phone_number', 'password', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'created_at', 'updated_at']  # Bỏ 'password' ở đây
+        extra_kwargs = {
+            'password': {'write_only': True}  # Chỉ input, không output
+        }
+
+    def create(self, validated_data):
+        # Override create để hash password ngay khi save (tốt hơn update sau)
+        validated_data['password'] = make_password(validated_data.pop('password'))
+        return super().create(validated_data)
+
+
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, data):
+        email = data.get('email')
+        password = data.get('password')
+
+        if Customer.objects.filter(email=email).exists():
+            customer = Customer.objects.get(email=email)
+            if not check_password(password, customer.password):
+                raise serializers.ValidationError("Sai mật khẩu!")
+        else:
+            raise serializers.ValidationError("Email không tồn tại!")
+
+        data['customer'] = customer
+        return data
 
 class CartSerializer(serializers.ModelSerializer):
     class Meta:
