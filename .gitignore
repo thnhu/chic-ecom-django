@@ -31,19 +31,6 @@ staticfiles/  # Collected static files
 logs/  # Django logs folder nếu tạo
 *.log  # Logs chung (Django, Python, npm)
 
-# Node & React/Tailwind
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnp
-.pnp.js
-build/
-dist/
-.DS_Store
-.nyc_output
-coverage/
-*.tsbuildinfo
 
 # Env Files
 .env
@@ -63,7 +50,6 @@ Thumbs.db
 Thumbs.db.*
 
 # IDE (VSCode for frontend, PyCharm for backend)
-.vscode/
 .idea/  # PyCharm project files
 *.swp
 *.swo
