@@ -80,7 +80,7 @@ class ProductVariant(BaseModel):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     sku =models.CharField(max_length=50, unique=True)
     def __str__(self):
-        return (f"{self.product.name} - {self.sku} - {self.color.description}\n"
+        return (f"{self.product.name} - {self.sku}\n"
                 f"{self.color.name} - {self.size} - {self.quantity} - {self.price} - {self.status}\n")
     class Meta:
         unique_together = ('product', 'color', 'size')
