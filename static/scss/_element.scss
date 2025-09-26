@@ -1,0 +1,33 @@
+@import 'variables.scss';
+//Button base style
+.btn {
+    padding: 16px 54px;
+    border: $border-width;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-style: 16px;
+    transition: background-color $transition-speed;
+
+    &.btn-primary {
+        background-color: $black;
+        color: $white;
+        &:hover {
+            background-color: darken($black, 10%);
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $white;
+        color: $black;
+        &:hover {
+            background-color: darken($white, 10%);
+        }
+    }
+}
+
+
+
+
+
+
+

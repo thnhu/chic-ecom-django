@@ -1,0 +1,7 @@
+{% if class="primary" %}
+<button class="btn btn-{{ class }}" type="button" aria-label="{{ text }}">{{ text }}</button>
+{% elif class="secondary" %}
+<button class="btn btn-{{ class }}" type="button" aria-label="{{ text }}">{{ text }}</button>
+{% else}
+<button class="btn" type="button" aria-label="{{ text }}">{{ text }}</button>
+{% endif %}
