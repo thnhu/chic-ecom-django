@@ -7,7 +7,12 @@ $light-gray: #F5F5F5;  // Card background
 
 // Typography
 $font-primary: 'Roboto', sans-serif;  // Font chính, từ style guide
-$font-size-base: 16px;               // Kích thước mặc định
+$font-size-base: 16px;               // Kích thước mặc định: btn, nav
+$font-size-h1: 64px;                 // Header in homepage
+$font-size-h2: 48px;                 // Category or Collection in homepage
+$font-size-h3: 40px;                 // Product name in product detail
+$font-size-h4: 24px;                 // Product price in card
+$font-size-h5: 20px;                 // Product name in card, tab, filter
 $font-weight-regular: 400;           // Text thường
 $font-weight-bold: 700;              // Tiêu đề, button
 $line-height-base: 1.5;              // Chiều cao dòng
