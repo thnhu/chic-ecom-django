@@ -24,7 +24,7 @@ coverage.xml
 .hypothesis/
 .dmypy.json
 dmypy.json
-*.sqlite3  # db.sqlite3 ở backend (ignored để tránh commit data)
+*.sqlite3  
 migrations/0*.py  # Temp migrations
 media/  # User uploads (e.g., product images) - không commit
 staticfiles/  # Collected static files
