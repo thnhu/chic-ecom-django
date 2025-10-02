@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 .navbar-list {
     list-style: none;
@@ -23,20 +23,19 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
+    background-color: var(--white-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
     min-width: 150px;
 }
 /* Logo navbar */
 .header__logo {
-    font-family: Integral CF;
+    font-family: 'Integral CF',sans-serif;
     display: inline-block;
     font-weight: 700;
     font-style: Bold;
     font-size: 3.2rem;
     letter-spacing: 0%;
-    font-family: Integral CF;
     line-height: 100%;
     vertical-align: middle;
 }
@@ -48,8 +47,8 @@
 }
 /* Item navbar */
 .navbar-item {
-    margin: 0 8px;
-    position: relative; /* Định vị tương đối cho subnav */
+    gap: 4px;
+    position: relative;
 }
 .subnav-item {
     width: 100%;
@@ -64,8 +63,7 @@
     line-height: 48px;
     font-size: 1.6rem;
     color: var(--text-primary-color);
-    cursor: pointer;
-    padding: 0 8px; /* Thêm padding để vùng hover đẹp hơn */
+    padding: 0 8px;
 }
 /* Icon Navbar */
 .navbar-icon-link {
@@ -96,7 +94,7 @@
 .header__search {
     display: flex;
     align-items: center;
-    height: 24px;
+    height: 44px;
     width: 100%;
     max-width: 560px;
     border-radius: 62px;
@@ -117,7 +115,7 @@
     font-size: 1.6rem;
     color: #333;
     font-weight: 400;
-    font-style: Regular;
+    font-style: normal;
     line-height: 100%;
     letter-spacing: 0%;
 }

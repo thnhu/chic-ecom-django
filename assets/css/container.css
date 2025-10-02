@@ -1,0 +1,57 @@
+.slider {
+    margin-top: 16px;
+    padding-top: 40%;
+    width: 100%;
+    height: 400px;
+    opacity: 1;
+    background-image: url(/assets/images/slider.jpg);
+    background-repeat: no-repeat;
+    background-size: contain; /* Zoom to fill the frame */
+    background-position: right; /* Shift left from right edge, adjust as needed */
+    background-clip: border-box;
+    background-color: #F2F0F1;
+    position: relative;
+}
+.text-content {
+    top: 20%;
+    left: 8%;
+    position: absolute;
+}
+.text-heading {
+    width: 50%;
+    margin: 0;
+    height: 172px;
+    font-family: 'Integral CF',sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 6rem;
+    line-height: 6rem;
+    color: var(--black-color);
+}
+.text-description {
+    width: 50%;
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 400;
+    color: #00000099;
+    margin: 10px 0 0 0;
+    height: 32px;
+    font-style: normal;
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+.btn-primary {
+    width: 200px;
+    height: 52px;
+    gap: 12px;
+    border-radius: 62px;
+    border: 1px solid #000;
+    padding: 16px 54px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    top: 60%;
+    left: 8%;
+    position: absolute;
+}
+.btn-primary:hover {
+    background-color: #333;
+}
