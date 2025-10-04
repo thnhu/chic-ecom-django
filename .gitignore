@@ -24,12 +24,11 @@ coverage.xml
 .hypothesis/
 .dmypy.json
 dmypy.json
-*.sqlite3  # db.sqlite3 ở backend (ignored để tránh commit data)
-migrations/0*.py  # Temp migrations
-media/  # User uploads (e.g., product images) - không commit
-staticfiles/  # Collected static files
-logs/  # Django logs folder nếu tạo
-*.log  # Logs chung (Django, Python, npm)
+*.sqlite3  
+migrations/0*.py  
+staticfiles/ 
+logs/ 
+*.log 
 
 
 # Env Files
@@ -49,16 +48,16 @@ ehthumbs.db
 Thumbs.db
 Thumbs.db.*
 
-# IDE (VSCode for frontend, PyCharm for backend)
+# IDE
 .idea/  # PyCharm project files
 *.swp
 *.swo
 *~
 
-# Docker (nếu dùng sau ở Project 2)
+# Docker
 .dockerignore
 docker-compose.override.yml
-*.log  # Docker logs
+*.log 
 
 # Testing & Coverage
 
