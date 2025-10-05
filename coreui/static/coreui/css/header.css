@@ -1,6 +1,3 @@
-.wrapper {
-
-}
 .header {
     height: 48px;
     background-color: var(--white-color);
@@ -28,7 +25,6 @@
     z-index: 1;
     min-width: 150px;
 }
-/* Logo navbar */
 .header__logo {
     font-family: 'Integral CF',sans-serif;
     display: inline-block;
@@ -45,7 +41,6 @@
     color: var(--text-primary-color);
     margin-right: 20px;
 }
-/* Item navbar */
 .navbar-item {
     gap: 4px;
     position: relative;
@@ -65,7 +60,6 @@
     color: var(--text-primary-color);
     padding: 0 8px;
 }
-/* Icon Navbar */
 .navbar-icon-link {
     display: inline-flex;
     align-items: center;

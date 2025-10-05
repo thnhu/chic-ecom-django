@@ -1,0 +1,9 @@
+<section class="product-section {{ section_modifier }}"> <!-- Ví dụ: product-section--new-arrivals -->
+    <h2 class="product-section__header">{{ header_text }}</h2>
+    <div class="product-section__list grid__row"> <!-- Reuse grid__row nếu có -->
+        {% for item in items %}
+            {% include 'products/product-item.html' with item=item %} <!-- Sử dụng template đã cập nhật -->
+        {% endfor %}
+    </div>
+    <button class="product-section__view-all">View All</button>
+</section>
