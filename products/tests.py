@@ -1,15 +1,7 @@
 # from django.test import TestCase
-# from products.models import Category, Collection
+# from .models import Product
 
-# # Create your tests here.
-# class CategoryTest(TestCase):
-#     def test_category_creation(self):
-#         category = Category(name="Pants Male", description="Pants Male")
-#         category.save()
-#         self.assertEqual(category.name, "Pants Male")
-
-# class CollectionTest(TestCase):
-#     def test_collection_creation(self):
-#         collection = Category(name="Winter", description="Winter")
-#         collection.save()
-#         self.assertEqual(collection.name, "Winter")
+# class ProductModelTest(TestCase):
+#     def test_price_validation(self):
+#         product = Product(name='Test', base_price=100.00)
+#         self.assertTrue(product.base_price > 0)  # Validation logic đơn giản

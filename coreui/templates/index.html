@@ -4,5 +4,6 @@
 
 {% block content %}
     {% include './components/slider.html' %}
-    {% include './components/new_arrivals.html' %}
+    {% include './components/product-section.html' with section_class="new-arrivals" header_text="New Arrivals" items=new_arrivals_items %}
+    {% include './components/product-section.html' with section_class="top-selling" header_text="Top Selling" items=top_selling_items %}
 {% endblock %}

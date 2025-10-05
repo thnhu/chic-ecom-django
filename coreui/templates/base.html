@@ -1,26 +1,29 @@
-{% load static %}  <!-- Load tag static ở đầu -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}CHIC with us{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'coreui/css/base.css' %}">  <!-- Sử dụng static tag -->
     <link rel="stylesheet" href="{% static 'coreui/css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'coreui/css/container.css' %}">
+    <link rel="stylesheet" href="{% static 'coreui/css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'coreui/css/product-section.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/product-item.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">  <!-- Nếu có favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <div class="wrapper">
-        {% include './components/header.html' %}  <!-- Include component header -->
+        {% include './components/header.html' %}
         
         {% block content %}  <!-- Block cho content dynamic (SRP: chỉ content thay đổi) -->
         {% endblock %}
         
-        {% include './components/footer.html' %}  <!-- Include component footer -->
+        {% include './components/footer.html' %}
     </div>
     <!-- {% block extra_js %}{% endblock %}  Block cho JS nếu cần -->
 </body>

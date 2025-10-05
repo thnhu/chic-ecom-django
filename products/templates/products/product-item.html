@@ -1,0 +1,18 @@
+{% load static %}
+<div class="product-item">
+    <div class="product-item__image">
+        <img src="{% static item.image %}" alt="{{ item.name }}">  <!-- Sửa cách sử dụng static -->
+    </div>
+    <h3 class="product-item__name">{{ item.name }}</h3>
+    <div class="product-item__rating">
+        <span class="product-item__stars">{{ item.stars }}</span>
+        <span class="product-item__score">{{ item.score }}</span>
+    </div>
+    <div class="product-item__price {% if item.discount %}product-item__price--discount{% endif %}">
+        <span class="product-item__price-current">${{ item.current_price }}</span>
+        {% if item.discount %}
+            <span class="product-item__price-original">${{ item.original_price }}</span>
+            <span class="product-item__price-discount">{{ item.discount }}</span>
+        {% endif %}
+    </div>
+</div>
