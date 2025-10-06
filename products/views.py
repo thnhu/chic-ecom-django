@@ -7,16 +7,12 @@
 
 #     def get_context_data(self, **kwargs):
 #         context = super().get_context_data(**kwargs)
-#         # Query cho New Arrivals: Sắp xếp theo created_at mới nhất, lấy 4 items
 #         new_arrivals = Product.objects.filter(is_active=True).order_by('-created_at')[:4]
-#         # Query cho Top Selling: Giả sử dựa trên total_quantity cao nhất, lấy 4 items
 #         top_selling = Product.objects.filter(is_active=True).order_by('-total_quantity')[:4]
 
-#         # Chuẩn bị data cho từng item (dạng dict để dễ truyền vào product-item.html)
 #         def prepare_product_data(products):
 #             items = []
 #             for product in products:
-#                 # Lấy variant đầu tiên (giả sử, để đơn giản ở Project 1)
 #                 variant = ProductVariant.objects.filter(product=product).first()
 #                 image = Image.objects.filter(product=product, is_primary=True).first()
 #                 if variant and image:

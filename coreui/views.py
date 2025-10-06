@@ -5,7 +5,6 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Hardcode data tĩnh cho New Arrivals (4 items, dạng dict như atomic components)
         context['new_arrivals_items'] = [
             {
                 'image': 'images/T-shirt-with-Tape-Details.png',  

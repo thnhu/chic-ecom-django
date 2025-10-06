@@ -1,10 +1,9 @@
 .product-section {
     margin: 0 auto;
     padding: 20px 0;
-    text-align: center; /* Center header và button */
+    text-align: center;
 }
 
-/* Element: header */
 .product-section__header {
     font-size: 3rem;
     font-weight: bold;
@@ -13,14 +12,12 @@
     margin-bottom: 20px;
 }
 
-/* Element: list (sử dụng grid__row từ base CSS nếu có) */
 .product-section__list {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap; /* Responsive cho mobile */
+    flex-wrap: wrap;
 }
 
-/* Element: view-all button */
 .product-section__view-all {
     width: 218px;
     height: 52px;
@@ -39,12 +36,10 @@
     background-color: var(--gray-color);
 }
 
-/* Modifier: --new-arrivals (nếu cần biến thể cụ thể, ví dụ màu sắc khác) */
 .product-section--new-arrivals .product-section__header {
-    color: var(--primary-color); /* Ví dụ: Màu khác cho New Arrivals */
+    color: var(--primary-color);
 }
 
-/* Modifier: --top-selling */
 .product-section--top-selling .product-section__header {
-    color: var(--secondary-color); /* Ví dụ: Màu khác cho Top Selling */
+    color: var(--secondary-color);
 }
