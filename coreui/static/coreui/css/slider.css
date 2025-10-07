@@ -6,8 +6,8 @@
     opacity: 1;
     background-image: 'images/slider.jpg';
     background-repeat: no-repeat;
-    background-size: contain; /* Zoom to fill the frame */
-    background-position: right; /* Shift left from right edge, adjust as needed */
+    background-size: contain;
+    background-position: right;
     background-clip: border-box;
     background-color: #F2F0F1;
     position: relative;

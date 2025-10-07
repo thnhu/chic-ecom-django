@@ -4,4 +4,4 @@ from django.urls import reverse
 class HomeViewTests(TestCase):
     def test_home_view_status_code(self):
         response = self.client.get(reverse('home'))
-        self.assertEqual(response.status_code, 200)  # Test render OK
+        self.assertEqual(response.status_code, 200) 

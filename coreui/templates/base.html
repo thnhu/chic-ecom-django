@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}CHIC with us{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'coreui/css/base.css' %}">  <!-- Sử dụng static tag -->
+    <link rel="stylesheet" href="{% static 'coreui/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'coreui/css/header.css' %}">
     <link rel="stylesheet" href="{% static 'coreui/css/slider.css' %}">
     <link rel="stylesheet" href="{% static 'coreui/css/product-section.css' %}">
@@ -20,11 +20,11 @@
     <div class="wrapper">
         {% include './components/header.html' %}
         
-        {% block content %}  <!-- Block cho content dynamic (SRP: chỉ content thay đổi) -->
+        {% block content %}
         {% endblock %}
         
         {% include './components/footer.html' %}
     </div>
-    <!-- {% block extra_js %}{% endblock %}  Block cho JS nếu cần -->
+    <!-- {% block extra_js %}{% endblock %} -->
 </body>
 </html>
