@@ -25,7 +25,7 @@
     z-index: 1;
     min-width: 150px;
 }
-.header__logo {
+.logo {
     font-family: 'Integral CF',sans-serif;
     display: inline-block;
     font-weight: 700;
@@ -35,7 +35,7 @@
     line-height: 100%;
     vertical-align: middle;
 }
-.header__logo-link {
+.logo-link {
     display: inline-block;
     text-decoration: none;
     color: var(--text-primary-color);
