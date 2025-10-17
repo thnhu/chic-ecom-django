@@ -1,0 +1,20 @@
+.breadcrumb {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+}
+
+.breadcrumb__item {
+    color: var(--black-color);
+    text-decoration: none;
+    margin-right: 0.5rem;
+    transition: color 0.3s;
+}
+
+.breadcrumb__item:hover {
+    color: #333;
+}
+
+.breadcrumb__separator {
+    color: var(--black-color);
+    margin: 0 0.5rem;
+}
